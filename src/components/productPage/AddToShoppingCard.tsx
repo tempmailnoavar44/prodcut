@@ -2,7 +2,7 @@ import {
   calculateDiscountPercent,
   convertNumberToPersian,
 } from "@/src/lib/utils";
-import { Button } from "../ui";
+import { Button } from "@/src/components/ui";
 
 interface Props {
   price: number;
