@@ -10,7 +10,6 @@ interface Props {
 }
 
 const ModalVideoPlayDemo = ({ closeModal, videoDetail }: Props) => {
-  console.log(videoDetail[0]);
   
   useEffect(() => {
     document.body.style.overflow = "hidden";

@@ -65,12 +65,12 @@ const TopComments = ({ topComments, type }: Props) => {
         <Button
           clickEvent={() => setIsOpenModalAddComment(true)}
           name="ثبت دیدگاه"
-          className="w-full rounded-md h-[48px] text-background-200 border border-gray-100 text-sm bg-white flex-row-reverse font-medium"
+          className="w-full rounded-md h-[48px] text-background-100 border border-gray-100 text-sm bg-domaint-500 flex-row-reverse font-medium"
           variant={"customStyle"}
           size={"customSize"}
           icon={
             <>
-              <ArrowLeftShowMoreComments />
+              <ArrowLeftShowMoreComments isWhite/>
             </>
           }
         />

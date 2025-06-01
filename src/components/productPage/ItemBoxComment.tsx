@@ -11,7 +11,7 @@ const ItemBoxComment = ({
   comment_jdate,
   className,
   innerClassName,
-}: TopComments & { className: string; innerClassName: string }) => {
+}: TopComments & { className: string; innerClassName: string }) => { 
   return (
     <div key={comment_ID} className={`${className} rounded-md bg-white py-4`}>
       <div

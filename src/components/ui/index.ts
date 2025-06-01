@@ -1,5 +1,5 @@
 import Button from "./button";
-import Input from "./Input";
+import Input from "./input";
 import Select from "./select";
 import Checkbox from "./checkbox";
 

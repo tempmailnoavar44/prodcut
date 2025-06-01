@@ -1,4 +1,10 @@
-const ArrowLeftCommentProduct = ({ isBlack = false }: { isBlack?: boolean }) => {
+const ArrowLeftCommentProduct = ({
+  isBlack = false,
+  isGreen,
+}: {
+  isBlack?: boolean;
+  isGreen?: boolean;
+}) => {
   if (isBlack) {
     return (
       <svg
@@ -18,6 +24,24 @@ const ArrowLeftCommentProduct = ({ isBlack = false }: { isBlack?: boolean }) => 
     );
   }
 
+  if (isGreen) {
+    return (
+      <svg
+        width="6"
+        height="9"
+        viewBox="0 0 6 9"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M4.52 8.03L1 4.5L4.52 0.970001"
+          stroke="#1FA2C1"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+        />
+      </svg>
+    );
+  }
   return (
     <svg
       width="6"

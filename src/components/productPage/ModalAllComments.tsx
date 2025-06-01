@@ -1,6 +1,6 @@
 "use client";
 
-import { useGetCommentsListProductQuery } from "@/src/lib/services/getSpecialProduct";
+import { useLazyGetCommentsListProductQuery } from "@/src/lib/services/getSpecialProduct";
 import HeaderModals from "./HeaderModals";
 import ItemBoxComment from "./ItemBoxComment";
 import { TopComments } from "@/src/types";
@@ -11,15 +11,15 @@ interface Props {
 }
 
 const ModalAllComments = ({ closeModal }: Props) => {
-  // const idProduct = useAppSelector((state) => state.favorite);
-  const { data } = useGetCommentsListProductQuery(2);
+  const [trigger, { data, isSuccess }] = useLazyGetCommentsListProductQuery();
 
   useEffect(() => {
+    trigger(1);
     document.body.style.overflow = "hidden";
     return () => {
       document.body.style.overflow = "";
     };
-  }, []);
+  }, [trigger]);
 
   return (
     <div
@@ -32,22 +32,23 @@ const ModalAllComments = ({ closeModal }: Props) => {
         className="pt-4 text-sm font text-background-100 font-medium pr-5 pl-5"
       />
       <hr />
-      {data && (
+      {data && isSuccess && (
         <div className="w-full overflow-scroll p-4 flex flex-col gap-5">
-          {data.data["comments data"].map((comment: TopComments) => (
-            <ItemBoxComment
-              key={comment.comment_ID}
-              comment_ID={comment.comment_ID}
-              comment_author={comment.comment_author}
-              comment_date={comment.comment_date}
-              comment_meta={comment.comment_meta}
-              comment_content={comment.comment_content}
-              comment_parent={comment.comment_parent}
-              comment_jdate={comment.comment_jdate}
-              className={"300px"}
-              innerClassName="w-full leading-6"
-            />
-          ))}
+          {Array.isArray(data?.data?.comments_data) &&
+            data?.data?.comments_data.map((comment: TopComments) => (
+              <ItemBoxComment
+                key={comment.comment_ID}
+                comment_ID={comment.comment_ID}
+                comment_author={comment.comment_author}
+                comment_date={comment.comment_date}
+                comment_meta={comment.comment_meta}
+                comment_content={comment.comment_content}
+                comment_parent={comment.comment_parent}
+                comment_jdate={comment.comment_jdate}
+                className={"300px"}
+                innerClassName="w-full leading-6"
+              />
+            ))}
         </div>
       )}
     </div>

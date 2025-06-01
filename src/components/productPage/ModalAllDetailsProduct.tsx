@@ -17,7 +17,7 @@ const ModalAllDetailsProduct = ({ detailsProduct, closeModal }: Props) => {
       document.body.style.overflow = "";
     };
   }, []);
-  
+
   return (
     <div
       onClick={(e) => e.stopPropagation()}
@@ -30,15 +30,13 @@ const ModalAllDetailsProduct = ({ detailsProduct, closeModal }: Props) => {
       />
       <hr />
       {detailsProduct.map((item, index) => (
-        <div key={index} className="px-8 ">
-          <div className="flex justify-between items-center border-b py-6">
-            <h5 className="text-sm font-medium text-gray-500">
-              {item.title} :
-            </h5>
-            <p className="text-sm font-normal text-background-200">
-              {item.value}
-            </p>
-          </div>
+        <div key={index} className="flex justify-between items-center py-6 odd:bg-gray-100 even:bg-white">
+          <h5 className="text-sm font-medium text-gray-500 pr-8">
+            {item.title} :
+          </h5>
+          <p className="text-sm font-normal text-background-200 pl-8">
+            {item.value}
+          </p>
         </div>
       ))}
     </div>

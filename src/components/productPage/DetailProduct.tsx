@@ -20,13 +20,13 @@ const DetailProduct = ({ detailsProduct }: Props) => {
         <div className="flex justify-between items-center lg:pr-0">
           <h3 className="font-medium text-sm">مشخصات کتاب</h3>
           <div className="flex gap-2 items-center justify-center cursor-pointer text-domaint-500 text-xs">
-            <h4 onClick={() => setIsOpenDetail(!isOpenDetail)}>مشاهده همه</h4>
+            <h4 className="text-sm font-normal" onClick={() => setIsOpenDetail(!isOpenDetail)}>مشاهده همه</h4>
             <span>
               <ArrowLeftDescriptionProduct />
             </span>
           </div>
         </div>
-        <div className="flex h-[60px] overflow-x-auto overflow-y-hidden ">
+        <div className="flex h-[60px] overflow-x-auto overflow-y-hidden">
           {details.slice(0, 4).map((detail: QuickViewMetaItem, index) => (
             <div
               key={index}

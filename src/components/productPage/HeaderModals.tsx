@@ -1,10 +1,12 @@
 import { CloseButtonModalAllDetailsProduct } from "@/src/icons";
-import React from "react";  
+import React from "react";
+
 interface Props {
   name: string;
   closeModal: (value: boolean) => void;
   className?: string;
   classNameInnerHeading?: string;
+  icon?: React.ReactNode | null;
 }
 
 const HeaderModals = ({
@@ -12,6 +14,7 @@ const HeaderModals = ({
   name,
   className,
   classNameInnerHeading,
+  icon = null,
 }: Props) => {
   return (
     <div className={`mb-3 ${className}`}>
@@ -25,7 +28,8 @@ const HeaderModals = ({
           onClick={() => closeModal(false)}
           className="size-8 flex justify-center items-center"
         >
-          <CloseButtonModalAllDetailsProduct />
+          {!icon && <CloseButtonModalAllDetailsProduct />}
+          {icon && icon}
         </button>
       </div>
     </div>

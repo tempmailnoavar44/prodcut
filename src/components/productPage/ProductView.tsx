@@ -49,7 +49,6 @@ const ProductView = ({
           src={image.base_url + image.file}
           width={120}
           height={90}
-          priority
           alt="Can't not upload the image"
         />
         <div className="text-[#9F9F9F]">
@@ -72,9 +71,12 @@ const ProductView = ({
               <h6>{convertNumberToPersian(rate_average)}</h6>
               <StarCommentTotal />
             </div>
-            <div onClick={()=> setIsOpenModalComments(true)} className="flex gap-1 h-7 bg-[#F2F2F2] justify-center items-center rounded-[42px] text-xs cursor-pointer px-2">
+            <div
+              onClick={() => setIsOpenModalComments(true)}
+              className="flex gap-1 h-7 bg-domaint-100  underline text-cyan-600 justify-center items-center rounded-[42px] text-xs cursor-pointer px-2"
+            >
               <span>({convertNumberToPersian(comments_count)}) نظر</span>
-              <ArrowLeftCommentProduct />
+              <ArrowLeftCommentProduct isGreen />
             </div>
           </div>
         </div>

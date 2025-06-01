@@ -12,7 +12,7 @@ interface Props {
 const AddToShoppingCard = ({ price, offSale }: Props) => {
   
   return (
-    <div className="w-full h-[100px] bg-[#F7F9FC] fixed bottom-0 left-0 flex justify-between items-center p-4">
+    <div className="w-full h-[100px] bg-background-100 fixed bottom-0 left-0 flex justify-between items-center p-4">
       <div>
         <Button
           className="h-[48px] w-[178px] text-white"

@@ -15,6 +15,10 @@ import { BookRateQuality, VideoRateQuality } from "./commentRateQuality";
 
 import { FormInputsAddComment } from "./forms";
 
+import { TypesShoppingMethodNode,ShoppingMethodNode } from "./shoppingMethod";
+
+import { AllComments } from "./allComments";
+
 export type {
   QuickViewMeta,
   QuickViewMetaItem,
@@ -29,4 +33,7 @@ export type {
   VideoRateQuality,
   TypeProduct,
   FormInputsAddComment,
+  TypesShoppingMethodNode,
+  AllComments,
+  ShoppingMethodNode
 };

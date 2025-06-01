@@ -1,3 +1,4 @@
+import { AllComments, TypesShoppingMethodNode } from "@/src/types";
 import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
 
 // https://noav.ir/projects/simple-api/
@@ -15,10 +16,13 @@ export const getSpecialProduct = createApi({
     getProductById: build.query<any, number>({
       query: (name) => `?action=get_single_product&id=${name}`,
     }),
-    getCommentsListProduct: build.query<any, number>({
+    getCommentsListProduct: build.query<AllComments, number>({
       query: (name) => `?action=get_comments&id=151&page=${name}`,
+    }),
+    getAllShoppingMethod: build.query<TypesShoppingMethodNode, void>({
+      query: () => `?action=get_shipping_terms`,
     }),
   }),
 });
 
-export const { useGetProductByIdQuery, useGetCommentsListProductQuery } = getSpecialProduct;
+export const { useGetProductByIdQuery, useLazyGetCommentsListProductQuery, useLazyGetAllShoppingMethodQuery } = getSpecialProduct;

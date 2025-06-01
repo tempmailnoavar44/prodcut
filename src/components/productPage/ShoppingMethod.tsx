@@ -6,31 +6,41 @@ import {
 } from "@/src/icons";
 
 import { Button } from "../ui";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
-import ModalShoppingMethod from "./ModalShoppingMethod";
+import ModalShoppingMethod from "./shoppingMethods/ModalShoppingMethodInnerOne";
 import Modal from "../Modal";
+import { useLazyGetAllShoppingMethodQuery } from "@/src/lib/services/getSpecialProduct";
 
 const ShoppingMethod = () => {
   const [isOpenModal, setIsOpenModal] = useState(false);
+  const [trigger, { data, isSuccess }] = useLazyGetAllShoppingMethodQuery();
+
+  useEffect(() => {
+    trigger();
+  }, [trigger]);
 
   return (
     <>
       <div>
         <Button
-          name="روش های ارسال"
+          name={"روش‌های ارسال سفارش"}
           icon={
             <div className="flex items-center justify-center rounded-[50%] size-[30px] bg-gray-100">
               <ShoppingMethodProduct />
             </div>
           }
+          clickEvent={() => setIsOpenModal(true)}
           secondIcon={<ArrowLeftDescriptionProduct isBlack={true} />}
           variant={"productOptions"}
           size={"smOptions"}
         />
-        {isOpenModal && (
+        {isOpenModal && isSuccess && (
           <Modal closeModal={() => setIsOpenModal(false)}>
-            <ModalShoppingMethod />
+            <ModalShoppingMethod
+              methods={data.data}
+              closeModal={() => setIsOpenModal(false)}
+            />
           </Modal>
         )}
       </div>
