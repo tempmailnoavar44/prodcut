@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import { bookRateQuality, videoRateQuality } from "@/src/constants";
 import ModalAddCommentRateQuality from "./ModalAddCommentRateQuality";
 import { TypeProduct } from "@/src/types";

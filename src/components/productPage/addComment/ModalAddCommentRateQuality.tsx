@@ -1,6 +1,5 @@
 import {
   BookRateQuality,
-  FormInputsAddComment,
   VideoRateQuality,
 } from "@/src/types";
 import HeaderModals from "../HeaderModals";
@@ -8,8 +7,6 @@ import ItemAddCommentRateQuality from "./ItemAddCommentRateQuality";
 import { useEffect, useState } from "react";
 import { answersArrayToObject } from "@/src/lib/utils";
 import { Button } from "../../ui";
-import { useAppSelector } from "@/src/lib/store/hooks";
-import { toast } from "react-toastify";
 import Modal from "../../Modal";
 import FromSendComment from "./FromSendComment";
 
