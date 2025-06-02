@@ -6,17 +6,18 @@ interface SelectProps {
   error: boolean;
 }
 
-const Select = ({ options, keys, error, ...props }: SelectProps) => {  
+const Select = ({ options, keys, error, ...props }: SelectProps) => {
   return (
     <div className="relative w-full">
       <div className="relative">
         <select
           {...props}
+          defaultValue={''}
           className={`w-full h-[40px] pl-2 pr-6 py-2 rounded-md border bg-gray-100 outline-none focus:ring-2 focus:ring-domaint-500 text-xs text-background-200 appearance-none ${
             error ? "border-red-500" : "border-gray-200"
           }`}
         >
-          <option value="" disabled selected hidden>
+          <option value={''} disabled selected hidden>
             لطفا یک راه انتخاب کنید
           </option>
           {options.map((option, idx) => (

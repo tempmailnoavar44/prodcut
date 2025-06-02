@@ -7,8 +7,6 @@ interface Props {
 }
 
 const ItemModalShoppingMethods = ({ method, handleMethod }: Props) => {
-  console.log(method);
-
   return (
     <div
       className={`${method.children ? "px-4" : "last:pb-5 pt-3 px-6"}`}

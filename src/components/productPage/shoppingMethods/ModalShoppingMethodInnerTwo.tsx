@@ -1,4 +1,4 @@
-import { useState } from "react";
+import {useState } from "react";
 import HeaderModals from "../HeaderModals";
 import ItemModalShoppingMethods from "./ItemModalShoppingMethods";
 import Modal from "../../Modal";
@@ -21,7 +21,7 @@ const ModalShoppingMethodInnerTwo = ({ method, closeModal }: Props) => {
 
   return (
     <div
-      className="fixed bottom-0 rounded-t-md left-0 bg-white w-full animate-slideModalBottom"
+      className="fixed bottom-0 rounded-t-md left-0 bg-white w-full animate-slideModalBottom border-t"
       onClick={(e) => e.stopPropagation()}
     >
       <HeaderModals
@@ -46,7 +46,7 @@ const ModalShoppingMethodInnerTwo = ({ method, closeModal }: Props) => {
       {chooseMethod && (
         <Modal
           closeModal={() => setChooseMethod(null)}
-          className="bg-transparent"
+          className="bg-stone-500/30"
         >
           <ModalShoppingMethodInnerTwo
             method={chooseMethod}

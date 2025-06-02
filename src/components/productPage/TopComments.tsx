@@ -10,7 +10,7 @@ import { useState } from "react";
 import Modal from "../Modal";
 import ModalAllComments from "./ModalAllComments";
 import ItemBoxComment from "./ItemBoxComment";
-import ModalAddCommentUser from "./ModalAddCommentUser";
+import ModalAddCommentUser from "@/src/components/productPage/addComment/ModalAddCommentUser";
 
 interface Props {
   topComments: TopCommentsType[];
@@ -26,7 +26,7 @@ const TopComments = ({ topComments, type }: Props) => {
       <div className="mr-4">
         {topComments.length > 0 && (
           <>
-            <div className="flex gap-2 overflow-x-auto overflow-y-hidden w-full items-center ">
+            <div className="flex gap-2 overflow-x-auto overflow-y-hidden w-full items-center">
               {topComments.map((comment) => (
                 <ItemBoxComment
                   key={comment.comment_ID}
@@ -37,15 +37,21 @@ const TopComments = ({ topComments, type }: Props) => {
                   comment_content={comment.comment_content}
                   comment_parent={comment.comment_parent}
                   comment_jdate={comment.comment_jdate}
-                  className="h-[200px]"
-                  innerClassName=""
+                  className="h-[280px]"
+                  innerClassName="leading-5"
+                  type={type}
                 />
               ))}
               <div
                 onClick={() => setIsOpenModalComments(true)}
-                className="size-[42px] flex items-center justify-center border border-gray-200 cursor-pointer rounded-[50%] mx-3 px-2"
+                className="h-[280px] flex items-center justify-center flex-col bg-white rounded-lg px-[120px] mx-4 gap-2"
               >
-                <ArrowLeftShowMoreComments />
+                <div className="size-[42px] flex items-center justify-center border border-gray-200 cursor-pointer rounded-[50%] px-2">
+                  <ArrowLeftShowMoreComments />
+                </div>
+                <h6 className="text-center justify-start text-gray-500 text-xs font-normal text-nowrap">
+                  مشاهده نظرات دیگر
+                </h6>
               </div>
             </div>
           </>
@@ -64,13 +70,13 @@ const TopComments = ({ topComments, type }: Props) => {
       <div className=" mx-4">
         <Button
           clickEvent={() => setIsOpenModalAddComment(true)}
-          name="ثبت دیدگاه"
-          className="w-full rounded-md h-[48px] text-background-100 border border-gray-100 text-sm bg-domaint-500 flex-row-reverse font-medium"
+          name="ثبت نظر"
+          className="w-full rounded-md h-[48px] text-domaint-500 border border-domaint-500 text-sm bg-white flex-row-reverse font-medium"
           variant={"customStyle"}
           size={"customSize"}
           icon={
             <>
-              <ArrowLeftShowMoreComments isWhite/>
+              <ArrowLeftShowMoreComments isBlue />
             </>
           }
         />
@@ -80,6 +86,7 @@ const TopComments = ({ topComments, type }: Props) => {
           <Modal closeModal={() => setIsOpenModalComments(false)}>
             <ModalAllComments
               closeModal={() => setIsOpenModalComments(false)}
+              type={type}
             />
           </Modal>
         </>

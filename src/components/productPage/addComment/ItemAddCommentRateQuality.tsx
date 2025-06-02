@@ -1,4 +1,4 @@
-import { Checkbox } from "../ui";
+import { Checkbox } from "../../ui";
 
 interface Props {
   type: string;

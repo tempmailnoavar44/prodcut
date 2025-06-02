@@ -1,5 +1,5 @@
 import { SearchProduct } from "@/src/icons";
-import {Input} from "../ui";
+import { Input } from "../ui";
 
 const SearchBar = () => {
   return (

@@ -1,3 +1,5 @@
+import { BookRateQuality, VideoRateQuality } from "./commentRateQuality";
+
 export interface QuickViewMetaItem {
   title: string;
   value: string;
@@ -44,12 +46,7 @@ export interface TopComments {
     rating: string;
     degree: string;
     university: string;
-    opinion: {
-      "good-printing": string;
-      "good-writing": string;
-      "scientific-quality": string;
-      practicality: string;
-    };
+    opinion: BookRateQuality | VideoRateQuality;
   };
   comment_parent: string;
   comment_jdate: string;

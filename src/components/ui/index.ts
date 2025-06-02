@@ -1,6 +1,6 @@
 import Button from "./button";
+import Input from "./Input";
 import Select from "./select";
 import Checkbox from "./checkbox";
-import Input from "./Input";
 
 export { Button, Input, Select, Checkbox };

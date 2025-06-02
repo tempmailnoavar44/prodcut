@@ -1,9 +1,9 @@
 const ArrowLeftShowMoreComments = ({
   isSmall,
-  isWhite,
+  isBlue,
 }: {
   isSmall?: boolean;
-  isWhite?: boolean;
+  isBlue?: boolean;
 }) => {
   if (isSmall) {
     return (
@@ -34,7 +34,7 @@ const ArrowLeftShowMoreComments = ({
     );
   }
 
-  if (isWhite) {
+  if (isBlue) {
     return (
       <svg
         width="24"
@@ -45,7 +45,7 @@ const ArrowLeftShowMoreComments = ({
       >
         <path
           d="M9.57 5.93005L3.5 12.0001L9.57 18.0701"
-          stroke="#ffffff"
+          stroke="#1fa2c1"
           strokeWidth="1.5"
           strokeMiterlimit="10"
           strokeLinecap="round"
@@ -53,7 +53,7 @@ const ArrowLeftShowMoreComments = ({
         />
         <path
           d="M20.4999 12H3.66992"
-          stroke="#ffffff"
+          stroke="#1fa2c1"
           strokeWidth="1.5"
           strokeMiterlimit="10"
           strokeLinecap="round"

@@ -1,4 +1,4 @@
-import React, { InputHTMLAttributes, ReactNode } from 'react';
+import React, { InputHTMLAttributes, ReactNode } from "react";
 
 interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
   icon?: ReactNode;
@@ -7,7 +7,13 @@ interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
   placeholder?: string;
 }
 
-const Input: React.FC<InputProps> = ({ icon, className = '', style, placeholder ,...props }) => {
+const Input: React.FC<InputProps> = ({
+  icon,
+  className = "",
+  style,
+  placeholder,
+  ...props
+}) => {
   return (
     <div
       className={`flex items-center bg-white rounded overflow-hidden ${className}`}

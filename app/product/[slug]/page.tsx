@@ -64,6 +64,7 @@ const Page = () => {
                 rate_average={data.data.rate_average}
                 comments_count={data.data.comments_count}
                 videoDetail={data.data.introduction_video}
+                type={data.data.type}
               />
             </div>
             <DetailProduct detailsProduct={data.data.quick_view_meta} />
@@ -74,7 +75,11 @@ const Page = () => {
               id={data.data.type.id}
               slug={data.data.type.slug}
             />
-            <BuyersExperiences commentsSummary={data.data.comments_summary} />
+            <BuyersExperiences
+              typeProduct={data.data.type}
+              commentsSummary={data.data.comments_summary}
+              optionsSummary={data.data.opinions_summary}
+            />
             <TopComments
               topComments={data.data.comments}
               type={data.data.type}

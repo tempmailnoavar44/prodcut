@@ -5,11 +5,11 @@ import {
   ShoppingMethodProduct,
 } from "@/src/icons";
 
-import { Button } from "../ui";
+import { Button } from "../../ui";
 import { useEffect, useState } from "react";
 
-import ModalShoppingMethod from "./shoppingMethods/ModalShoppingMethodInnerOne";
-import Modal from "../Modal";
+import ModalShoppingMethod from "./ModalShoppingMethodInnerOne";
+import Modal from "../../Modal";
 import { useLazyGetAllShoppingMethodQuery } from "@/src/lib/services/getSpecialProduct";
 
 const ShoppingMethod = () => {
@@ -36,7 +36,7 @@ const ShoppingMethod = () => {
           size={"smOptions"}
         />
         {isOpenModal && isSuccess && (
-          <Modal closeModal={() => setIsOpenModal(false)} className="bg-stone-500/30">
+          <Modal closeModal={() => setIsOpenModal(false)} className="bg-transparent">
             <ModalShoppingMethod
               methods={data.data}
               closeModal={() => setIsOpenModal(false)}

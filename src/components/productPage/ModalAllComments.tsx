@@ -3,16 +3,17 @@
 import { useLazyGetCommentsListProductQuery } from "@/src/lib/services/getSpecialProduct";
 import HeaderModals from "./HeaderModals";
 import ItemBoxComment from "./ItemBoxComment";
-import { TopComments } from "@/src/types";
+import { TopComments, TypeProduct } from "@/src/types";
 import { useEffect } from "react";
 
 interface Props {
   closeModal: (value: boolean) => void;
+  type: TypeProduct;
 }
 
-const ModalAllComments = ({ closeModal }: Props) => {
+const ModalAllComments = ({ closeModal, type }: Props) => {
   const [trigger, { data, isSuccess }] = useLazyGetCommentsListProductQuery();
-
+  
   useEffect(() => {
     trigger(1);
     document.body.style.overflow = "hidden";
@@ -24,7 +25,7 @@ const ModalAllComments = ({ closeModal }: Props) => {
   return (
     <div
       onClick={(e) => e.stopPropagation()}
-      className="w-full h-full fixed top-0 left-0 bg-background-100 overflow-scroll"
+      className="w-full h-full fixed top-0 left-0 bg-background-100 overflow-scroll animate-slideModalBottom"
     >
       <HeaderModals
         closeModal={closeModal}
@@ -47,6 +48,7 @@ const ModalAllComments = ({ closeModal }: Props) => {
                 comment_jdate={comment.comment_jdate}
                 className={"300px"}
                 innerClassName="w-full leading-6"
+                type={type}
               />
             ))}
         </div>

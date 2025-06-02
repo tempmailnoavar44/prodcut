@@ -16,7 +16,7 @@ import { Button } from "../ui";
 import { useState } from "react";
 import Modal from "../Modal";
 import ModalVideoPlayDemo from "./ModalVideoPlayDemo";
-import { IntroductionVideo, ProductImages } from "@/src/types";
+import { IntroductionVideo, ProductImages, TypeProduct } from "@/src/types";
 import ModalAllComments from "./ModalAllComments";
 
 interface Props {
@@ -26,6 +26,7 @@ interface Props {
   rate_average: number;
   comments_count: number;
   videoDetail: IntroductionVideo[] | [];
+  type: TypeProduct;
 }
 const ProductView = ({
   title,
@@ -34,6 +35,7 @@ const ProductView = ({
   rate_average,
   comments_count,
   videoDetail,
+  type
 }: Props) => {
   const [isOpenModalVideoDemo, setIsOpenModalVideoDemo] = useState(false);
   const handleClickVideoButton = () => {
@@ -129,6 +131,7 @@ const ProductView = ({
           <Modal closeModal={() => setIsOpenModalComments(false)}>
             <ModalAllComments
               closeModal={() => setIsOpenModalComments(false)}
+              type={type}
             />
           </Modal>
         </>

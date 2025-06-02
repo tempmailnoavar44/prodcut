@@ -46,7 +46,7 @@ const ModalShoppingMethod = ({ methods, closeModal }: Props) => {
       ))}
 
       {chooseMethod && (
-        <Modal closeModal={() => setChooseMethod(null)}>
+        <Modal closeModal={() => setChooseMethod(null)} className="bg-stone-900/15">
           <ModalShoppingMethodInnerTwo
             method={chooseMethod}
             closeModal={() => setChooseMethod(null)}
