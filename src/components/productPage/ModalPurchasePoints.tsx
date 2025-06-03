@@ -33,7 +33,7 @@ const ModalPurchasePoints = ({ closeModal }: Props) => {
         </p>
 
         <Button
-          name="فهمیدم"
+          name="متوجه شدم"
           className="w-full rounded-md h-[48px] text-background-200 bg-gray-100 text-xs font-bold"
           variant={"customStyle"}
           size={"customSize"}

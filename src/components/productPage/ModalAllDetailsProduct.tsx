@@ -31,7 +31,7 @@ const ModalAllDetailsProduct = ({ detailsProduct, closeModal }: Props) => {
       <hr />
       {detailsProduct.map((item, index) => (
         <div key={index} className="flex justify-between items-center py-6 odd:bg-gray-100 even:bg-white">
-          <h5 className="text-sm font-medium text-gray-500 pr-8">
+          <h5 className="text-sm font-medium text-gray-300 pr-8">
             {item.title} :
           </h5>
           <p className="text-sm font-normal text-background-200 pl-8">

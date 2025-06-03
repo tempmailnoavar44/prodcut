@@ -87,7 +87,7 @@ const ProductView = ({
       <div>
         <div className="flex justify-center items-center gap-3 px-4">
           <Button
-            name="نمونه پی‌دی‌اف"
+            name="نمونه پی‌دی‌اف کتاب"
             size={"sm"}
             variant={"secondary"}
             data-visible={isExistVideo}
@@ -100,7 +100,7 @@ const ProductView = ({
           />
           <Button
             clickEvent={handleClickVideoButton}
-            name="مشاهده دمو"
+            name="ویدئو معرفی محصول"
             data-visible={isExistVideo}
             size={"sm"}
             variant={"secondary"}

@@ -3,10 +3,13 @@ import {
   EtaSocial,
   InstagramSocial,
   LinkedinSocial,
+  MobileApplication,
+  PcApplication,
   SoroushSocial,
   TelegramSocial,
 } from "../icons";
 import { FooterDataMenu, FooterSocialLinks } from "../types";
+import { FooterButtonsApplication } from "../types/footer";
 
 export const footerDataMenu: FooterDataMenu[] = [
   {
@@ -117,6 +120,22 @@ export const footerSocialLinks: FooterSocialLinks = {
     {
       icon: <TelegramSocial />,
       link: "",
+    },
+  ],
+};
+
+export const footerButtonDownloadApplications: FooterButtonsApplication = {
+  title: "دانلود اپلیکیشن",
+  subtitles: [
+    {
+      link: "",
+      title: "نسخه موبایل",
+      icon: <MobileApplication />,
+    },
+    {
+      link: "",
+      title: "نسخه ویندوز",
+      icon: <PcApplication />,
     },
   ],
 };

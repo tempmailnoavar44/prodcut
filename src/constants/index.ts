@@ -6,6 +6,7 @@ import {
   opinionRateQuality,
 } from "./addCommentRateQuality";
 
+import type { FooterButtonsApplication } from "../types/footer";
 export {
   footerDataMenu,
   footerSocialLinks,
@@ -14,4 +15,5 @@ export {
   bookRateQuality,
   videoRateQuality,
   opinionRateQuality,
+  FooterButtonsApplication,
 };

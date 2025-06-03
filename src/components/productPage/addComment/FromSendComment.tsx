@@ -65,7 +65,7 @@ const FromSendComment = ({
         _wp_unfiltered_html_comment: "9007d77b92",
       };
       console.log(formData);
-    
+      
       closeParentModal(false);
       closeModal(false);
     }

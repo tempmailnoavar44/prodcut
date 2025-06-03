@@ -1,92 +1,103 @@
 "use client";
 
 import { footerDataMenu, footerSocialLinks } from "@/src/constants";
-import {
-  ArrowLeftCommentProduct,
-  ArrowLeftShowMoreComments,
-  NoavarLogo,
-} from "@/src/icons";
 import Link from "next/link";
-import { useState } from "react";
 import GovernmentCredit from "./GovernmentCredit";
+import { footerButtonDownloadApplications } from "@/src/constants/footerData";
 
 const Footer = () => {
-  const [openIndex, setOpenIndex] = useState<number | null>(null);
-
   return (
-    <footer className="px-4 bg-background-100">
-      <div className="bg-background-100 py-7">
-        <div className="h-[76px] bg-white rounded-sm flex items-center justify-between my-4 p-4 ">
-          <div className="flex gap-3 items-center">
-            <NoavarLogo />
-            <h4 className="text-sm text-background-200 font-medium justify-self-end">
-              دانلود اپلیکیشن نوآور
-            </h4>
-          </div>
-          <ArrowLeftShowMoreComments />
-        </div>
-        <div className="bg-white">
-          {footerDataMenu.map((titles, index) => (
-            <div key={index}>
-              <div>
-                <div
-                  className="cursor-pointer py-5 pl-3 pr-5 bg-white rounded-sm flex justify-between items-center font-medium text-background-200 text-xs"
-                  onClick={() =>
-                    setOpenIndex(openIndex === index ? null : index)
-                  }
-                >
-                  {titles.category}
-                  <span
-                    className={`transition-transform ml-2 ${
-                      openIndex === index ? "rotate-90" : ""
-                    }`}
-                  >
-                    <ArrowLeftCommentProduct isBlack />
-                  </span>
-                </div>
-                <div
-                  className={`transition-all duration-600 ease-in-out overflow-hidden ${
-                    openIndex === index
-                      ? "max-h-96 opacity-100"
-                      : "max-h-0 opacity-0"
-                  }`}
-                >
-                  <ul className="bg-white pb-4 list-disc px-10">
-                    {titles.subtitles.map(
-                      (item: { title: string; link: string }, idx: number) => (
-                        <li
-                          key={idx}
-                          className="py-1 text-background-300 text-xs text-gray-400"
-                        >
-                          {item.title}
-                        </li>
-                      )
-                    )}
-                  </ul>
-                </div>
-              </div>
-              <hr />
-            </div>
-          ))}
+    <footer className="px-4 pb-3 bg-domaint-500">
+      <div className="py-7">
+        <div className="flex justify-between flex-wrap gap-y-7">
+          <ul className="text-white text-sm font-bold list-none w-1/2 list-inside">
+            {footerDataMenu[0].category}
+            {footerDataMenu[0].subtitles.map((titles, index) => (
+              <li
+                className="text-gray-100 text-sm font-normal list-disc pt-4 pr-1 "
+                key={index}
+              >
+                <Link href={"#"}>{titles.title}</Link>
+              </li>
+            ))}
+          </ul>
 
-          <div className="py-6 px-5 flex flex-col gap-4">
-            <h6 className="font-medium text-xs">{footerSocialLinks.title}</h6>
-            <div className="flex items-center justify-center gap-2">
-              {footerSocialLinks.socials.map((social, index) => (
-                  <div key={index}>
-                    <Link href={social.link} key={index}>
-                      {social.icon}
-                    </Link>
-                  </div>
-              ))}
+          <ul className="text-white text-sm font-bold list-none w-1/2 list-inside">
+            {footerDataMenu[3].category}
+            {footerDataMenu[3].subtitles.map((titles, index) => (
+              <li
+                className="text-gray-100 text-sm font-normal list-disc pt-4 mr-1"
+                key={index}
+              >
+                <Link href={"#"}>{titles.title}</Link>
+              </li>
+            ))}
+          </ul>
+          <ul className="text-white text-sm font-bold list-none w-1/2 list-inside">
+            {footerDataMenu[2].category}
+            {footerDataMenu[2].subtitles.map((titles, index) => (
+              <li
+                className="text-gray-100 text-sm font-normal list-disc pt-4 mr-1"
+                key={index}
+              >
+                <Link href={"#"}>{titles.title}</Link>
+              </li>
+            ))}
+          </ul>
+
+          <ul className="text-white text-sm font-bold list-none w-1/2 list-inside">
+            {footerDataMenu[1].category}
+            {footerDataMenu[1].subtitles.map((titles, index) => (
+              <li
+                className="text-gray-100 text-sm font-normal list-disc pt-4 mr-1"
+                key={index}
+              >
+                <Link href={"#"}>{titles.title}</Link>
+              </li>
+            ))}
+          </ul>
+        </div>
+        <div className="w-full flex">
+          <div className="w-1/2"></div>
+          <div className="flex flex-col gap-2 w-1/2 ">
+            <h6 className="text-white text-sm font-bold text-right">
+              {footerButtonDownloadApplications.title}
+            </h6>
+            <div className="flex gap-2 flex-col">
+              {footerButtonDownloadApplications.subtitles.map(
+                (application, index) => (
+                  <Link
+                    key={index}
+                    href={application.link}
+                    className="flex w-[126px] bg-white rounded-md justify-center items-center gap-2 px-4 py-2 text-zinc-800
+                  text-xs font-medium"
+                  >
+                    {application.title} {application.icon}
+                  </Link>
+                )
+              )}
             </div>
           </div>
-          <hr />
-          <GovernmentCredit />
         </div>
       </div>
+      <hr />
+      <div className="py-6 px-5 flex flex-col gap-4">
+        <h6 className=" text-white text-sm font-bold">
+          {footerSocialLinks.title}
+        </h6>
+        <div className="flex items-center justify-center gap-2">
+          {footerSocialLinks.socials.map((social, index) => (
+            <div key={index}>
+              <Link href={social.link} key={index}>
+                {social.icon}
+              </Link>
+            </div>
+          ))}
+        </div>
+      </div>
+      <hr />
+      <GovernmentCredit />
     </footer>
   );
 };
-
 export default Footer;

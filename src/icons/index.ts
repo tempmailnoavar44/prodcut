@@ -25,8 +25,10 @@ import EtaSocial from "./EtaSocial";
 import AparatSocial from "./AparatSocial";
 import TelegramSocial from "./TelegramSocial";
 import TickCheckbox from "./TickCheckbox";
-import LikeRecommendProduct from "./LikeRecommendProduct";
 import CommentProfilePerson from "./CommentProfilePerson";
+import LikeRecommendProduct from "./LikeRecommendProduct";
+import MobileApplication from "./MobileApplication";
+import PcApplication from "./PcApplication";
 
 export {
   AddFavoriteProducts,
@@ -56,6 +58,8 @@ export {
   AparatSocial,
   TelegramSocial,
   TickCheckbox,
-  LikeRecommendProduct,
   CommentProfilePerson,
+  LikeRecommendProduct,
+  MobileApplication,
+  PcApplication,
 };
